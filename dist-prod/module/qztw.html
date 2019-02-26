@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <meta name="renderer" content="webkit">
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <title>仟姿惠</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+
+        body,
+        html {
+            -webkit-text-size-adjust: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            text-decoration: none;
+            list-style: none;
+        }
+
+        img {
+            border: 0px;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        ul,
+        li,
+        dl,
+        dd,
+        dt,
+        p,
+        ol,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-size: 12px;
+            font-weight: 100;
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            margin: 0 auto;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .index {
+            overflow: hidden;
+        }
+
+        .clr {
+            clear: both;
+            height: 0px;
+            width: 100%;
+            font-size: 1px;
+            line-height: 0px;
+            visibility: hidden;
+            overflow: hidden;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        a,
+        input,
+        button {
+            outline: none;
+        }
+
+        ::-moz-focus-inner {
+            border: 0px;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        *::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        input,
+        textarea {
+            border: 0;
+            -webkit-appearance: none;
+        }
+
+        * ::-webkit-scrollbar-thumb {
+            border-radius: 0px;
+            -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+            background: rgba(0, 0, 0, 0);
+        }
+
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        html,
+        body,
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            /* position: relative; */
+            overflow: hidden;
+            overflow-y: hidden;
+            /* top: 0; */
+        }
+
+        #app {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /*解决ios上滑动不流畅*/
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #app img {
+            display: block;
+            width: 100%;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body scoll=no style="height:100%;">
+    <div id="app">
+        <img src="./2018.0330_qztw.jpg" alt="" srcset="">
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    /**
+ * 设置html-动态font-size rem
+ */
+    (function (win, lib) {
+        var doc = win.document;
+        var docEl = doc.documentElement;
+        var metaEl = doc.querySelector('meta[name="viewport"]');
+        var flexibleEl = doc.querySelector('meta[name="flexible"]');
+        var dpr = 0;
+        var scale = 0;
+        var tid;
+        var flexible = lib.flexible || (lib.flexible = {});
+
+        if (metaEl) {
+            console.warn('将根据已有的meta标签来设置缩放比例');
+            var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
+            if (match) {
+                scale = parseFloat(match[1]);
+                dpr = parseInt(1 / scale);
+            }
+        } else if (flexibleEl) {
+            var content = flexibleEl.getAttribute('content');
+            if (content) {
+                var initialDpr = content.match(/initial\-dpr=([\d\.]+)/);
+                var maximumDpr = content.match(/maximum\-dpr=([\d\.]+)/);
+                if (initialDpr) {
+                    dpr = parseFloat(initialDpr[1]);
+                    scale = parseFloat((1 / dpr).toFixed(2));
+                }
+                if (maximumDpr) {
+                    dpr = parseFloat(maximumDpr[1]);
+                    scale = parseFloat((1 / dpr).toFixed(2));
+                }
+            }
+        }
+
+        if (!dpr && !scale) {
+            var isAndroid = win.navigator.appVersion.match(/android/gi);
+            var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+            var devicePixelRatio = win.devicePixelRatio;
+            if (isIPhone) {
+                // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+                if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+                    dpr = 3;
+                } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+                    dpr = 2;
+                } else {
+                    dpr = 1;
+                }
+            } else {
+                // 其他设备下，仍旧使用1倍的方案
+                dpr = 1;
+            }
+            scale = 1 / dpr;
+        }
+
+        docEl.setAttribute('data-dpr', dpr);
+        if (!metaEl) {
+            metaEl = doc.createElement('meta');
+            metaEl.setAttribute('name', 'viewport');
+            metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+            if (docEl.firstElementChild) {
+                docEl.firstElementChild.appendChild(metaEl);
+            } else {
+                var wrap = doc.createElement('div');
+                wrap.appendChild(metaEl);
+                doc.write(wrap.innerHTML);
+            }
+        }
+
+        function refreshRem() {
+            var width = docEl.getBoundingClientRect().width;
+            // if (width / dpr > 540) {
+            //     width = 540 * dpr;
+            // }
+            var rem = width / 10;
+            docEl.style.fontSize = rem + 'px';
+            flexible.rem = win.rem = rem;
+        }
+
+        win.addEventListener('resize', function () {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+        }, false);
+        win.addEventListener('pageshow', function (e) {
+            if (e.persisted) {
+                clearTimeout(tid);
+                tid = setTimeout(refreshRem, 300);
+            }
+        }, false);
+
+        if (doc.readyState === 'complete') {
+            doc.body.style.fontSize = 12 * dpr + 'px';
+        } else {
+            doc.addEventListener('DOMContentLoaded', function (e) {
+                doc.body.style.fontSize = 12 * dpr + 'px';
+            }, false);
+        }
+
+
+        refreshRem();
+
+        flexible.dpr = win.dpr = dpr;
+        flexible.refreshRem = refreshRem;
+        flexible.rem2px = function (d) {
+            var val = parseFloat(d) * this.rem;
+            if (typeof d === 'string' && d.match(/rem$/)) {
+                val += 'px';
+            }
+            return val;
+        }
+        flexible.px2rem = function (d) {
+            var val = parseFloat(d) / this.rem;
+            if (typeof d === 'string' && d.match(/px$/)) {
+                val += 'rem';
+            }
+            return val;
+        }
+
+    })(window, window['lib'] || (window['lib'] = {}));
+
+
+    /**
+     * ios阻止缩放 
+    */
+    window.onload = function () {
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('dblclick', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        });
+        var lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    };
+    document.documentElement.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    }, false);
+    var lastTouchEnd = 0;
+    document.documentElement.addEventListener('touchend', function (event) {
+        var now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+</script>
+<script src="https://bdc.bqjr.cn/script/QZ/conf.js"></script>
+<script src="https://bdc.bqjr.cn/script/common/behaviorData.js"></script>
+<script src="https://bdc.bqjr.cn/script/common/xw.1.0.min.js"></script>
+
+</html>

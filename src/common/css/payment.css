@@ -1,0 +1,154 @@
+#payment {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    /* margin-bottom: 1.4667rem; */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+#payment .container{
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1; /* OLD - Firefox 19- */
+    /* width: 20%; For old syntax, otherwise collapses. */
+    -webkit-flex: 1; /* Chrome */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*解决ios上滑动不流畅*/
+    -webkit-overflow-scrolling: touch;
+    /* height: 100%; */
+}
+#payment .totlePrice{
+    margin-top: 0.4rem;
+    height: 1.3333rem;
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    line-height: 1.3333rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.3733rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+#payment .totlePrice .amountTitle{
+    color: #282828;
+}
+#payment .totlePrice .amount{
+    color: #ff5c7e;
+}
+#payment .payments{
+    font-size: 0.32rem;
+    color: #787878;
+    padding: 0 0.3733rem;
+    background-color: #fff;
+    margin-bottom: 0.4rem;
+}
+#payment .select{
+    font-size: 0.32rem;
+    color: #787878;
+    display: block;
+    margin-bottom: 0.3333rem;
+    margin-left: 0.3733rem;
+}
+#payment .payments .payment{
+    height: 0.9333rem;
+    line-height: 0.9333rem;
+    border-bottom: 0.0133rem solid #c8c8c8;
+    font-size: 0.3733rem;
+    color: #282828;
+    font-weight: 500;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+    align-items: center;
+}
+#payment .payments .payment:last-of-type{
+    border: none;
+}
+#payment .payments .payment img{
+    width: 0.4533rem;
+    height: 0.4533rem;
+    border-radius: 0.0667rem;
+    margin-right: 0.1333rem;
+}
+#payment .payments .payment .payment-text{
+    flex: 1;
+}
+#payment .payments .payment .radio{
+    position: relative;
+}
+#payment .payments .payment .radio input{
+    width: 0.3733rem;
+    height: 0.3733rem;
+    opacity:0;
+    position: absolute;
+    margin:auto;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+#payment .payments .payment .radio span{
+    display: inline-block;
+    width: 0.3733rem;
+    height: 0.3733rem;
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    -webkit-transition:color .2s;
+    transition:color .2s;
+    border: 1px solid #dadada;
+    position: relative;
+}
+#payment .payments .payment .radio input:checked+span::before{
+    content: "";
+    display: block;
+    width: 0.1867rem;
+    height: 0.1867rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    background-color: #ff65b1;
+    border-radius: 50%;
+}
+#payment .attention{
+    padding: 0 0.3733rem;
+    color: #a0a0a0;
+    font-size: 0.32rem;
+    line-height: 125%;
+    padding-bottom: 1.2rem;
+}
+#payment .pay{
+    flex: 1;
+}
+#payment .pay button{
+    display: block;
+    width: 6.4rem;
+    height: 1.04rem;
+    border: none;
+    background-color: #ff5c7e;
+    border-radius: 0.52rem;
+    margin: 0 auto;
+    font-size: 0.4533rem;
+    line-height: 1.04rem;
+    color: #fff;
+}

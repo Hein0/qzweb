@@ -1,0 +1,341 @@
+#Continue {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    /* margin-bottom: 1.4667rem; */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+#Continue .container{
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    -moz-box-flex: 1; /* OLD - Firefox 19- */ 
+    /* width: 20%; For old syntax, otherwise collapses. */
+    -webkit-flex: 1; /* Chrome */ 
+    -ms-flex: 1; /* IE 10 */ 
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*解决ios上滑动不流畅*/
+    -webkit-overflow-scrolling: touch;
+    /* height: 100%; */
+}
+
+/* 购物列表 */
+#Continue .BuyList .commodity{
+    margin-top: 0.4rem;
+    padding: 0.2933rem 0.3733rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    background-color: #fff;
+}
+#Continue .BuyList .header{
+    height: 0.64rem;
+   
+    /* line-height: 0.64rem; */
+    font-size: 0.32rem;
+    color: #282828;
+    overflow: hidden;
+}
+#Continue .BuyList .header .edit{
+    float: right;
+    color: #a0a0a0;
+}
+
+#Continue .BuyList .bottom{
+    padding-top: 0.3467rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    /* justify-content: space-between; */
+    
+}
+
+#Continue .bottom{
+height: 0.64rem;
+/* line-height: 0.64rem; */
+font-size: 0.32rem;
+color: #282828;
+
+}
+#Continue .container .BuyList .bottom{
+    position: relative;
+}
+#Continue .container .BuyList .bottom .keywords{
+    width: 1.2rem;
+}
+#Continue .container .BuyList  .specification{
+    flex: 1;
+    text-align: right;
+    color: #ff65b1;
+    margin-right: 0;
+}
+#Continue .container .BuyList i{
+    display: block;
+    width: 0.3733rem;
+    height: 0.3733rem;
+    background-image: url("../../module/diary/images/jiantou_tb_@2.png");
+    background-repeat: no-repeat;
+    background-position:center;
+    border-radius: 50%;
+    background-size:0.2133rem 0.2133rem;
+    right: 0;
+    background-color: #ff65b1;
+   
+}
+#Continue .container .grade{
+    margin-top: 0.4rem;
+    padding: 0.2933rem 0.3733rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    background-color: #fff;
+    height: 1.0667rem;
+}
+#Continue .comment{
+    margin-top: 0.4rem;
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    /* margin-bottom: 0.4rem; */
+}
+#Continue .comment .commentHead{
+    height: 0.9067rem;
+    line-height: 0.9067rem;
+    font-size: 0.32rem;
+    color: #787878;
+}
+#Continue .preoperative{
+    margin-top: 0.4rem;
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    /* height: 3.8667rem; */
+    /* margin-bottom: 0.4rem; */
+}
+#Continue .preoperative .picture{
+    height: 1.0667rem;
+    border-bottom: 0.0133rem solid #ccc;
+    font-size: 0.32rem;
+    line-height: 0.9067rem;
+    color: #282828;
+}
+#Continue .preoperative .picture span{
+    font-size: 0.2667rem;;
+    color: #ff65b1;
+}
+#Continue .preoperative .fileInputContainer{
+    margin-top: 0.3333rem;
+    width:1.3333rem; 
+    height:1.3333rem; 
+    
+}
+.fileInputContainer{
+    height:1.3333rem;
+    background:url("../../module/diary/images/a11.png") center center ;
+    position:relative;
+    width: 1.3333rem;
+    background-size: 100%;
+}
+.fileInput{
+    height:1.3333rem;
+    overflow: hidden;
+    font-size: 4rem;
+    position:absolute;
+    right:0;
+    top:0;
+    opacity: 0;
+    filter:alpha(opacity=0);
+    cursor:pointer;
+}
+#Continue .container .box{
+    margin-top: 0.4rem;
+    background-color: #fff;
+    padding-left: 0.3733rem;
+    padding-bottom: 4.12rem;
+    padding-top: 0.3733rem;
+    border: none;
+    width: 100%;
+    font-size: 0.32rem;
+    color: #a0a0a0;
+}
+#Continue .Next{
+    margin-top: 1.1467rem;
+    width: 6.4rem;
+    height: 1.04rem;
+    margin-left: 1.7867rem;
+    border-radius: 0.6667rem;
+    background-color: #ff65b1;
+    font-size: 0.4133rem;
+}
+
+
+
+
+/* 优惠 */
+
+#Continue .container .BuyList .commodity .discount{
+    height: 0.9333rem;
+    line-height: 0.9333rem;
+    /* position: relative; */
+}
+#Continue .container .BuyList .commodity .discount .time{
+    /* position: absolute; */
+    /* right: 0.9333rem; */
+    font-size: 0.32rem;
+    color: #a0a0a0;
+}
+#Continue .container .BuyList .commodity .discount:last-of-type{
+    border: none;
+}
+/* #Continue .container .BuyList .commodity .discount::before{
+    content: '';
+    display: block;
+    clear: both;
+} */
+/* #Continue .container .BuyList .commodity .discount::after{
+    content: '';
+    display: block;
+    border: solid 0.0267rem #c8c8c8;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    position: absolute;
+    top: 50%;
+    right: 0.1333rem;
+    width: 0.1333rem;
+    height: 0.1333rem;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+} */
+#Continue .container .BuyList .commodity .discount-icon{
+    float: left;
+    width: 0.4rem;
+    height: 0.4rem;
+    font-size: 0.2667rem;
+    line-height: 0.4rem; 
+    margin-top: 0.2667rem;
+    border-radius: 0.0667rem;
+    color: #fff;
+    text-align: center;
+    font-style: normal;
+    background-color: #5fc5ff;
+    margin-right: 0.2667rem;
+}
+
+#Continue .container .BuyList .commodity .discount-text{
+    font-size: 0.32rem;
+    color: #282828;
+}
+#Continue .container .BuyList .commodity .discount-text em{
+    font-style: normal;
+    color: #ff5c7e;
+}
+#Continue .Next{
+    margin-top: 2.2133rem;
+    margin-bottom: 2.2133rem;
+    width: 6.4rem;
+    height: 1.04rem;
+    margin-left: 1.7867rem;
+    border-radius: 0.6667rem;
+    background-color: #ff65b1;
+    font-size: 0.4133rem;
+}
+
+#Continue .preoperative{
+    margin-top: 0.4rem;
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    /* height: 3.8667rem; */
+    /* margin-bottom: 0.4rem; */
+    padding-bottom: 0.6rem;
+}
+#Continue .preoperative .imgList{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+#Continue .preoperative .picture{
+    height: 1.0667rem;
+    border-bottom: 0.0133rem solid #ccc;
+    font-size: 0.32rem;
+    line-height: 0.9067rem;
+    color: #282828;
+}
+#Continue .preoperative .picture span{
+    font-size: 0.2667rem;;
+    color: #ff65b1;
+}
+#Continue .preoperative .fileInputContainer{
+    margin-top: 0.3333rem;
+    width:1.3333rem; 
+    height:1.3333rem; 
+    position: relative;
+    margin-right: 0.4rem;
+}
+#Continue .preoperative .afterImgList{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+}
+#Continue .preoperative .afterImgList img{
+    /* margin-top: 0.3333rem; */
+    width:1.3333rem; 
+    height:1.3333rem; 
+    margin-right: 0.4rem;
+}
+
+#Continue .fileInputContainer input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1.3333rem;
+    width: 1.3333rem;
+    opacity: 0;
+}
+#Continue .fileInputContainer{
+    height:1.3333rem;
+    background:url("../../module/diary/images/a12.png") center center ;
+    position:relative;
+    width: 1.3333rem;
+    background-size: 100%;
+}
+#Continue .preoperative .cover{
+    font-size: 0.28rem;
+    bottom: -0.4rem;
+    margin-left: 0.3867rem;
+   
+}
+#Continue .fileInputContainer img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1.3333rem;
+    width: 1.3333rem;
+}
+#Continue .BuyList .commodity .discount.header{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <meta name="renderer" content="webkit">
+    <title>我的日记</title>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        * ::-webkit-scrollbar-thumb {
+            border-radius: 0px;
+            -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+            background: rgba(0, 0, 0, 0);
+        }
+
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        html,
+        body,
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            /* position: relative; */
+            overflow: hidden;
+            overflow-y: hidden;
+            /* top: 0; */
+        }
+    </style>
+<link href="../static/css/vendor.e52d83ed6c476f3e0b70db1df5fc5823.css?b8960f965777da3285bc" rel="stylesheet"><link href="../static/css/module/diary.5ab6c7ae5be64b524b43534d1bd1cebc.css?b8960f965777da3285bc" rel="stylesheet"></head>
+
+<body scoll=no style="height:100%;">
+    <div id="app"></div>
+<script type="text/javascript" src="../static/js/manifest.de75ac2bf68125689461.js?b8960f965777da3285bc"></script><script type="text/javascript" src="../static/js/vendor.b0682b458ea190605889.js?b8960f965777da3285bc"></script><script type="text/javascript" src="../static/js/module/diary.f0e3237900b78c9d79d0.js?b8960f965777da3285bc"></script></body>
+<!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+<script src="./h5native.js"></script>
+ <!--原生交互-->
+<script>
+
+  	function cbChooseVideo(JsonObjStr){
+  		window.nativeToH5Json = JsonObjStr;
+    	window.H5Json = JsonObjStr;
+    	window.APP.$store.commit('GET_VIDEO_INFO', {data: JsonObjStr});
+      window.APP.$store.commit('GET_VIDEO_OBJ', {data: JsonObjStr});
+  	}
+    //
+    // setTimeout(function(){
+    //   cbChooseVideo(JSON.stringify({
+    //     coverUrl: '333',
+    //     videoUrl: '11',
+    //   }))
+    // },3000)
+</script>
+<script>
+    /**
+ * 设置html-动态font-size rem
+ */
+
+    (function (win, lib) {
+        var doc = win.document;
+        var docEl = doc.documentElement;
+        var metaEl = doc.querySelector('meta[name="viewport"]');
+        var flexibleEl = doc.querySelector('meta[name="flexible"]');
+        var dpr = 0;
+        var scale = 0;
+        var tid;
+        var flexible = lib.flexible || (lib.flexible = {});
+
+        if (metaEl) {
+            console.warn('将根据已有的meta标签来设置缩放比例');
+            var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
+            if (match) {
+                scale = parseFloat(match[1]);
+                dpr = parseInt(1 / scale);
+            }
+        } else if (flexibleEl) {
+            var content = flexibleEl.getAttribute('content');
+            if (content) {
+                var initialDpr = content.match(/initial\-dpr=([\d\.]+)/);
+                var maximumDpr = content.match(/maximum\-dpr=([\d\.]+)/);
+                if (initialDpr) {
+                    dpr = parseFloat(initialDpr[1]);
+                    scale = parseFloat((1 / dpr).toFixed(2));
+                }
+                if (maximumDpr) {
+                    dpr = parseFloat(maximumDpr[1]);
+                    scale = parseFloat((1 / dpr).toFixed(2));
+                }
+            }
+        }
+
+        if (!dpr && !scale) {
+            var isAndroid = win.navigator.appVersion.match(/android/gi);
+            var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+            var devicePixelRatio = win.devicePixelRatio;
+            if (isIPhone) {
+                // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+                if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+                    dpr = 3;
+                } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+                    dpr = 2;
+                } else {
+                    dpr = 1;
+                }
+            } else {
+                // 其他设备下，仍旧使用1倍的方案
+                dpr = 1;
+            }
+            scale = 1 / dpr;
+        }
+
+        docEl.setAttribute('data-dpr', dpr);
+        if (!metaEl) {
+            metaEl = doc.createElement('meta');
+            metaEl.setAttribute('name', 'viewport');
+            metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+            if (docEl.firstElementChild) {
+                docEl.firstElementChild.appendChild(metaEl);
+            } else {
+                var wrap = doc.createElement('div');
+                wrap.appendChild(metaEl);
+                doc.write(wrap.innerHTML);
+            }
+        }
+
+        function refreshRem() {
+            var width = docEl.getBoundingClientRect().width;
+            // if (width / dpr > 540) {
+            //     width = 540 * dpr;
+            // }
+            var rem = width / 10;
+            docEl.style.fontSize = rem + 'px';
+            flexible.rem = win.rem = rem;
+        }
+
+        win.addEventListener('resize', function () {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+        }, false);
+        win.addEventListener('pageshow', function (e) {
+            if (e.persisted) {
+                clearTimeout(tid);
+                tid = setTimeout(refreshRem, 300);
+            }
+        }, false);
+
+        if (doc.readyState === 'complete') {
+            doc.body.style.fontSize = 12 * dpr + 'px';
+        } else {
+            doc.addEventListener('DOMContentLoaded', function (e) {
+                doc.body.style.fontSize = 12 * dpr + 'px';
+            }, false);
+        }
+
+
+        refreshRem();
+
+        flexible.dpr = win.dpr = dpr;
+        flexible.refreshRem = refreshRem;
+        flexible.rem2px = function (d) {
+            var val = parseFloat(d) * this.rem;
+            if (typeof d === 'string' && d.match(/rem$/)) {
+                val += 'px';
+            }
+            return val;
+        }
+        flexible.px2rem = function (d) {
+            var val = parseFloat(d) / this.rem;
+            if (typeof d === 'string' && d.match(/px$/)) {
+                val += 'rem';
+            }
+            return val;
+        }
+
+    })(window, window['lib'] || (window['lib'] = {}));
+
+
+    /**
+     * ios阻止缩放
+    */
+    window.onload = function () {
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('dblclick', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        });
+        var lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    };
+    document.documentElement.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    }, false);
+    var lastTouchEnd = 0;
+    document.documentElement.addEventListener('touchend', function (event) {
+        var now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+
+    // (function () {
+    //     var startY, endY;
+    //     //记录手指触摸的起点坐标
+    //     $('body').on('touchstart', function (e) {
+    //         startY = e.touches[0].pageY;
+    //     });
+    //     $('body').on('touchmove', function (e) {
+    //         endY = e.touches[0].pageY;  //记录手指触摸的移动中的坐标
+    //         //手指下滑，页面到达顶端不能继续下滑
+    //         if (endY > startY && $(window).scrollTop() <= 0) {
+    //             e.preventDefault();
+    //         }
+    //         //手指上滑，页面到达底部能继续上滑
+    //         if (endY < startY && $(window).scrollTop() +
+    //             $(window).height() >= $('body')[0].scrollHeight) {
+    //             e.preventDefault();
+    //         }
+    //     })
+    // })()
+
+    // //angular的写法，仅供参考
+    // window.element(document).on('scroll', function () {
+    //     var scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    //     var window_height = $(window).height() + $(window).scrollTop();
+    //     if (scrollHeight <= window_height) {
+    //         //页面停止滑动，滚动容器恢复默认定位
+    //         $(ele).css({ 'position': 'absolute' })
+    //     } else {
+    //         //页面滚动，滚动容器设置固定定位，随着微信内置浏览器一块儿滑动
+    //         $(ele).css({ 'position': 'static' })
+    //     }
+    // })
+</script>
+<!--<script src="https://bdc.bqjr.cn/script/QZ/conf.js"></script>
+<script src="https://bdc.bqjr.cn/script/common/behaviorData.js"></script>
+<script src="https://bdc.bqjr.cn/script/common/xw.1.0.min.js"></script>-->
+</html>

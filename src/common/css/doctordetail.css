@@ -1,0 +1,391 @@
+*{
+    line-height: 100%;
+}
+#doctorDetail{
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    /* margin-bottom: 1.4667rem; */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+#doctorDetail .container{
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    -moz-box-flex: 1; /* OLD - Firefox 19- */ 
+    /* width: 20%; For old syntax, otherwise collapses. */
+    -webkit-flex: 1; /* Chrome */ 
+    -ms-flex: 1; /* IE 10 */ 
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*解决ios上滑动不流畅*/
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    /* height: 100%; */
+}
+#doctorDetail::-webkit-scrollbar {
+    display: none;
+}
+
+/* header */
+#doctorDetail .container .header{
+    height: 6.3333rem;
+    background-color: #fff;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+}
+#doctorDetail .container .header .attention{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.56rem;
+}
+#doctorDetail .container .header .attention .doctorIcon{
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-bottom: 0.3333rem;
+}
+#doctorDetail .container .header .attention .doctorName{
+    color: #505050;
+    font-size: 0.3733rem;
+    margin-bottom: 0.24rem;
+}
+#doctorDetail .container .header .attention .doctorHospital{
+    color: #787878;
+    font-size: 0.32rem;
+    margin-bottom: 0.48rem;
+}
+#doctorDetail .container .header .attention .doctorAttention{
+    width: 1.44rem;
+    height: 0.5067rem;
+    border-radius: 0.2533rem;
+    border: none;
+    background-color: #ff66b2;
+    color: #fff;
+    margin-bottom: 0.64rem;
+    font-size: 0.32rem;
+}
+#doctorDetail .container .header .bottom .popularity{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+}
+#doctorDetail .container .header .bottom .popularity li{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    flex: 1;
+    font-size: 0.3733rem;
+    color: #787878;
+}
+#doctorDetail .container .header .bottom .popularity li span{
+    text-align: center;
+}
+#doctorDetail .container .header .bottom .popularity li span:first-child{
+    margin-bottom: 0.2933rem;
+}
+#doctorDetail .container .header .bottom .popularity li:nth-of-type(1) span:first-child,
+#doctorDetail .container .header .bottom .popularity li:nth-of-type(2) span:first-child{
+    border-right: 1px solid #e6e6e6;
+}
+#doctorDetail .container .header .bottom .popularity li span:last-child{
+    color: #4f4f4f;
+}
+/* ortherInfo */
+#doctorDetail .container .ortherInfo{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    margin-top: 0.2933rem;
+    background-color: #fff;
+    padding: 0 0.3733rem;
+}
+#doctorDetail .container .ortherInfo li{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    padding: 0.1867rem 0;
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+}
+#doctorDetail .container .ortherInfo>li:not(:first-child)::after{
+    content: '';
+    display: block;
+    border: solid 0.0267rem #c8c8c8;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    position: absolute;
+    top: 50%;
+    right: 0.2667rem;
+    width: 0.1333rem;
+    height: 0.1333rem;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+#doctorDetail .container .ortherInfo li:first-child{
+    padding-top: 0.2933rem;
+    padding-bottom: 0.0667rem;
+    align-items: flex-start;
+}
+#doctorDetail .container .ortherInfo li:last-child{
+    border: none;
+}
+#doctorDetail .container .ortherInfo li img{
+    width: 0.5067rem;
+    height: 0.5067rem;
+    margin-right: 0.1467rem;
+}
+#doctorDetail .container .ortherInfo li span{
+    color: #787878;
+    font-size: 0.32rem;
+}
+#doctorDetail .container .ortherInfo li:first-child span{
+    line-height: 0.5067rem;
+}
+#doctorDetail .container .ortherInfo li .product{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 0.2133rem;
+    flex: 1;
+}
+#doctorDetail .container .ortherInfo li .product li{
+    padding: 0 0.1467rem;
+    border: 1px solid #ebebeb;
+    line-height: 0.6133rem;
+    font-size: 0.32rem;
+    color: #ff66b2;
+    border-radius: 0.6133rem;
+    margin-bottom: 0.2133rem;
+}
+/* banner */
+#doctorDetail .container .banner{
+    margin-top: 0.2667rem;
+    width: 100%;
+    height: 4.0667rem;
+}
+#doctorDetail .container .banner .mint-swipe{
+    width: 100%;
+    height: 100%;
+}
+#doctorDetail .container .banner .mint-swipe img{
+    width: 100%;
+    height: 100%;
+}
+/* mainCaseList */
+#doctorDetail .container .mainCaseList{
+    margin-top: 0.2667rem;
+    background-color: #fff;
+}
+#doctorDetail .container .mainCaseList h3{
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    font-size: 0.3733rem;
+    color: #282828;
+    line-height: 0.8933rem;
+    border-bottom: 1px solid #e3e3e3;
+}
+#doctorDetail .container .mainCaseList>li{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+}
+#doctorDetail .container .mainCaseList li .diary-img{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+    margin-top: 0.3733rem;
+    padding: 0 0.3733rem;
+}
+#doctorDetail .container .mainCaseList li .diary-img img{
+    width: 4.5467rem;
+    height: 2.9333rem;
+    border-radius: 0.1333rem;
+}
+#doctorDetail .container .mainCaseList li .authorInfo{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    padding: 0 0.3733rem;
+    margin-top: 0.36rem;
+}
+#doctorDetail .container .mainCaseList li .authorInfo img{
+    width: 0.96rem;
+    height: 0.96rem;
+    margin-right: 0.2667rem;
+}
+#doctorDetail .container .mainCaseList li .authorInfo .author{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    flex: 1;
+}
+#doctorDetail .container .mainCaseList li .authorInfo .author h4{
+    font-size: 0.4267rem;
+    color: #282828;
+    margin-bottom: 0.12rem;
+}
+#doctorDetail .container .mainCaseList li .authorInfo .author .time{
+    font-size: 0.32rem;
+    color: #787878;
+}
+#doctorDetail .container .mainCaseList li .authorInfo .authorAttention{
+    width: 1.3333rem;
+    height: 0.64rem;
+    border: none;
+    color: #fff;
+    background-color: #ff65b1;
+    border-radius: 0.64rem;
+    font-size: 0.32rem;
+}
+#doctorDetail .container .mainCaseList li .content{
+    padding: 0 0.3733rem;
+    margin-top: 0.2933rem;
+    font-size: 0.3733rem;
+    line-height: 0.4667rem;
+    color: #282828;
+}
+#doctorDetail .container .mainCaseList li .tips{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    padding: 0 0.3733rem;
+    margin-top: 0.3333rem;
+}
+#doctorDetail .container .mainCaseList li .tips img{
+    width: 0.2533rem;
+    height: 0.2533rem;
+    margin-right: 0.08rem;
+}
+#doctorDetail .container .mainCaseList li .tips li{
+    color: #ff65b1;
+    font-size: 0.2667rem;
+    margin-right: 0.3333rem;
+}
+#doctorDetail .container .mainCaseList li .productList{
+    padding: 0 0.3733rem;
+    margin-top: 0.4rem;
+}
+#doctorDetail .container .mainCaseList li .productList li{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    font-size: 0.32rem;
+    position: relative;
+    margin-bottom: 0.24rem;
+}
+#doctorDetail .container .mainCaseList li .productList li::after{
+    content: '';
+    display: block;
+    border: solid 0.0267rem #ff5c7e;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0.1467rem;
+    height: 0.1467rem;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+#doctorDetail .container .mainCaseList li .productList li .productName{
+    color: #282828;
+    margin-right: 0.12rem;
+}
+#doctorDetail .container .mainCaseList li .productList li .hospital{
+    color: #787878;
+    flex: 1;
+}
+#doctorDetail .container .mainCaseList li .productList li .price{
+    margin-right: 0.3067rem;
+    font-size: 0.3733rem;
+    color: #ff5c7e;
+}
+#doctorDetail .container .mainCaseList li .casePopularity{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    padding: 0 0.3733rem;
+    height: 0.8933rem;
+    background-color: #efefef;
+    justify-content: space-between;
+}
+#doctorDetail .container .mainCaseList li .casePopularity li{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+}
+#doctorDetail .container .mainCaseList li .casePopularity li img{
+    margin-right: 0.1067rem;
+}
+#doctorDetail .container .mainCaseList li .casePopularity li span{
+    color: #787878;
+    font-size: 0.32rem;
+}
+#doctorDetail .container .mainCaseList li .casePopularity .pageView img{
+    width: 0.36rem;
+    height: 0.2rem;
+}
+#doctorDetail .container .mainCaseList li .casePopularity .comment img{
+    width: 0.3467rem;
+    height: 0.28rem;
+}
+#doctorDetail .container .mainCaseList li .casePopularity .like img{
+    width: 0.3067rem;
+    height: 0.2667rem;
+}

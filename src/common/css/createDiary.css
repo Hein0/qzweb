@@ -1,0 +1,103 @@
+#detail {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    /* margin-bottom: 1.4667rem; */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+#detail .container{
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    -moz-box-flex: 1; /* OLD - Firefox 19- */ 
+    /* width: 20%; For old syntax, otherwise collapses. */
+    -webkit-flex: 1; /* Chrome */ 
+    -ms-flex: 1; /* IE 10 */ 
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*解决ios上滑动不流畅*/
+    -webkit-overflow-scrolling: touch;
+  
+    /* height: 100%; */
+}
+
+/* 优惠 */
+#detail .discounts{
+    margin-top: 0.4rem;
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    margin-bottom: 0.4rem;
+}
+
+#detail .discounts .discount{
+    height: 0.9333rem;
+    line-height: 0.9333rem;
+    position: relative;
+}
+#detail .discounts .discount .time{
+    position: absolute;
+    right: 70px;
+    font-size: 0.32rem;
+    color: #a0a0a0;
+}
+#detail .discounts .discount:last-of-type{
+    border: none;
+}
+#detail .discounts .discount::before{
+    content: '';
+    display: block;
+    clear: both;
+}
+#detail .discounts .discount::after{
+    content: '';
+    display: block;
+    border: solid 0.0267rem #c8c8c8;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    position: absolute;
+    top: 50%;
+    right: 0.2667rem;
+    width: 0.1333rem;
+    height: 0.1333rem;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+#detail .discounts .discount .discount-icon{
+    float: left;
+    width: 0.4rem;
+    height: 0.4rem;
+    font-size: 0.2667rem;
+    line-height: 0.4rem; 
+    margin-top: 0.2667rem;
+    border-radius: 0.0667rem;
+    color: #fff;
+    text-align: center;
+    font-style: normal;
+    background-color: #5fc5ff;
+    margin-right: 0.2667rem;
+}
+
+#detail .discounts .discount .discount-text{
+    font-size: 0.32rem;
+    color: #282828;
+}
+#detail .discounts .discount .discount-text em{
+    font-style: normal;
+    color: #ff5c7e;
+}
+#detail .Next{
+    margin-top: 2.2133rem;
+    width: 6.4rem;
+    height: 1.04rem;
+    margin-left: 1.7867rem;
+    border-radius: 0.6667rem;
+    background-color: #ff65b1;
+    font-size: 0.4133rem;
+}

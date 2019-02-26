@@ -1,0 +1,511 @@
+#Logwriter {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    /* margin-bottom: 1.4667rem; */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+#Logwriter .container{
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    -moz-box-flex: 1; /* OLD - Firefox 19- */ 
+    /* width: 20%; For old syntax, otherwise collapses. */
+    -webkit-flex: 1; /* Chrome */ 
+    -ms-flex: 1; /* IE 10 */ 
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*解决ios上滑动不流畅*/
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+}
+
+/* 购物列表 */
+#Logwriter .BuyList .commodity{
+    margin-top: 0.4rem;
+    padding: 0.2933rem 0.3733rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    background-color: #fff;
+}
+#Logwriter .BuyList .header{
+    height: 0.64rem;
+    /* line-height: 0.64rem; */
+    font-size: 0.32rem;
+    color: #282828;
+    overflow: hidden;
+}
+#Logwriter .BuyList .header .edit{
+    float: right;
+    color: #a0a0a0;
+}
+#Logwriter .BuyList .bottom{
+    padding-top: 0.3467rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+    
+}
+
+#Logwriter .bottom{
+height: 0.64rem;
+/* line-height: 0.64rem; */
+font-size: 0.32rem;
+color: #282828;
+
+}
+#Logwriter .container .BuyList .bottom .commodityInfo{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex: 1;
+}
+#Logwriter .container .BuyList .bottom .commodityInfo .title{
+    flex: 1;
+    display: block;
+}
+#Logwriter .container .BuyList .bottom .commodityInfo .keywords{
+    margin-right: 0.5333rem;
+    color: #ff65b1;
+}
+#Logwriter .container .BuyList .commodityInfo i{
+    width: 0.3733rem;
+    height: 0.3733rem;
+    display: block;
+    background-image: url("../../module/diary/images/jiahao_tb_@2.png");
+    background-repeat: no-repeat;
+    background-position:center;
+    border-radius: 50%;
+    right: 0;
+    background-color: #ff65b1;
+   
+}
+#Logwriter .container .grade{
+    margin-top: 0.4rem;
+    padding: 0.2933rem 0.3733rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    background-color: #fff;
+    height: 1.0667rem;
+}
+#Logwriter .comment{
+    margin-top: 0.4rem;
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    /* margin-bottom: 0.4rem; */
+}
+#Logwriter .comment .commentHead{
+    height: 0.9067rem;
+    line-height: 0.9067rem;
+    font-size: 0.32rem;
+    color: #282828;
+}
+#Logwriter .preoperative{
+    margin-top: 0.4rem;
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    /* height: 3.8667rem; */
+    /* margin-bottom: 0.4rem; */
+    padding-bottom: 0.6rem;
+}
+#Logwriter .preoperative .imgList{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+#Logwriter .preoperative .picture{
+    height: 1.0667rem;
+    border-bottom: 0.0133rem solid #ccc;
+    font-size: 0.32rem;
+    line-height: 0.9067rem;
+    color: #282828;
+}
+#Logwriter .preoperative .picture span{
+    font-size: 0.2667rem;;
+    color: #ff65b1;
+}
+#Logwriter .preoperative .fileInputContainer{
+    margin-top: 0.3333rem;
+    width:1.3333rem; 
+    height:1.3333rem; 
+    position: relative;
+    margin-right: 0.4rem;
+}
+#Logwriter .preoperative .fileInputContainer .deleteImg{
+    font-style: normal;
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 0.2667rem;
+    height: 0.2667rem;
+    text-align: center;
+    line-height: 0.2667rem;
+    background-color: #fff;
+}
+#Logwriter .preoperative .afterImgList{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+}
+#Logwriter .preoperative .afterImgList img{
+    /* margin-top: 0.3333rem; */
+    width:1.3333rem; 
+    height:1.3333rem; 
+    margin-right: 0.4rem;
+}
+#Logwriter .fileInputContainer input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1.3333rem;
+    width: 1.3333rem;
+    opacity: 0;
+}
+#Logwriter .fileInputContainer{
+    height:1.3333rem;
+    background:url("../../module/diary/images/a12.png") center center ;
+    position:relative;
+    width: 1.3333rem;
+    background-size: 100%;
+}
+#Logwriter .fileInputContainer span{
+    font-size: 0.28rem;
+    position: absolute;
+    width: 1.3333rem;
+    text-align: center;
+    bottom: -0.4rem;
+}
+#Logwriter .fileInputContainer img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1.3333rem;
+    width: 1.3333rem;
+}
+.fileInput{
+    height:1.3333rem;
+    overflow: hidden;
+    font-size: 4rem;
+    position:absolute;
+    right:0;
+    top:0;
+    opacity: 0;
+    filter:alpha(opacity=0);
+    cursor:pointer;
+}
+#Logwriter .container .box{
+    margin-top: 0.4rem;
+    background-color: #fff;
+    padding-left: 0.3733rem;
+    padding-bottom: 4.12rem;
+    padding-top: 0.3733rem;
+    border: none;
+    width: 100%;
+    font-size: 0.32rem;
+    color: #a0a0a0;
+}
+#Logwriter .Next{
+    margin-top: 0.5rem;
+    width: 6.4rem;
+    height: 1.04rem;
+    margin-left: 1.7867rem;
+    border-radius: 0.6667rem;
+    background-color: #ff65b1;
+    font-size: 0.4133rem;
+    margin-bottom: 1.1467rem;
+}
+#Logwriter .container .BuyList .commodity .discount{
+    height: 0.9333rem;
+    line-height: 0.9333rem;
+    position: relative;
+}
+#Logwriter .container .BuyList .commodity .discount .time{
+    position: absolute;
+    right: 0.9333rem;
+    font-size: 0.32rem;
+    color: #a0a0a0;
+}
+#Logwriter .container .BuyList .commodity .discount:last-of-type{
+    border: none;
+}
+#Logwriter .container .BuyList .commodity .discount::before{
+    content: '';
+    display: block;
+    clear: both;
+}
+#Logwriter .container .BuyList .commodity .discount::after{
+    content: '';
+    display: block;
+    border: solid 0.0267rem #c8c8c8;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    position: absolute;
+    top: 50%;
+    right: 0.1333rem;
+    width: 0.1333rem;
+    height: 0.1333rem;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+#Logwriter .container .BuyList .commodity .discount-text{
+    font-size: 0.32rem;
+    color: #282828;
+}
+#Logwriter .container .BuyList .commodity .discount-text em{
+    font-style: normal;
+    color: #ff5c7e;
+}
+/* #Logwriter .container .comment .commentHead .all{
+    position: relative;
+}
+#Logwriter .container .comment .commentHead .all>input{
+    opacity:0;
+    position: absolute;
+    width:0.4rem;
+    height:0.4rem;
+    margin:0;
+    margin-top: 0.25335rem;
+}
+#Logwriter .container .comment .commentHead .all>input:nth-of-type(1),
+#Logwriter .container .comment .commentHead .all>span:nth-of-type(1){
+    display:none;
+}
+#Logwriter .commentHead .all>span{
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: #a0a0a0;
+    border-radius: 0.0667rem;
+    font-size:0.3733rem;
+    line-height: 0.4rem;
+    color:#fff;
+    text-align: center;
+    -webkit-transition:color .2s;
+    transition:color .2s;
+    font-weight: bold;
+    margin-right: 0.1333rem;
+}
+#Logwriter .commentHead .all>input:checked~span{
+    color:#282828;
+}
+#Logwriter .commentHead .all>input:checked+span{
+    color:#fff;
+} */
+#Logwriter .Next{
+    margin-top: 0.5rem;
+    width: 6.4rem;
+    height: 1.04rem;
+    margin-left: 1.7867rem;
+    border-radius: 0.6667rem;
+    background-color: #ff65b1;
+    font-size: 0.4133rem;
+}
+
+
+
+
+
+
+
+
+
+/* 评分开始 */
+/* #Logwriter .comment .commentHead .all{
+    position: relative;
+}
+#Logwriter .comment .commentHead .all>input{
+    opacity:0;
+    position: absolute;
+    width:0.3733rem;
+    height:0.3733rem;
+    margin:0;
+    margin-top: 0.25335rem;
+}
+#Logwriter .comment .commentHead .all>input:nth-of-type(1),
+#Logwriter .comment .commentHead .all>span:nth-of-type(1){
+    display:none;
+}
+#Logwriter .comment .commentHead .all>span{
+    display: inline-block;
+    width: 0.3733rem;
+    height: 0.3733rem;
+    background-color: #D4D4D4;
+    border-radius: 0.0667rem;
+    font-size:0.3733rem;
+    line-height:  0.3733rem;
+    color:#fff;
+    text-align: center;
+    -webkit-transition:color .2s;
+    transition:color .2s;
+    font-weight: bold;
+    margin-left:0.1333rem;
+    margin-right: 0.1333rem;
+}
+#Logwriter .comment .commentHead .all>input:checked~span{
+    color:#282828;
+}
+#Logwriter .comment .commentHead .all>input:checked+span{
+    color:#fff;
+} */
+.all{
+    position: relative;
+}
+.all>input{
+    opacity:0;
+    position: absolute;
+    width:0.4rem;
+    height:0.4rem;
+    margin:0;
+    margin-top: 0.25335rem;
+}
+.all>input:nth-of-type(1),
+.all>span:nth-of-type(1){
+    display:none;
+}
+.all>span{
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 0.0667rem;
+    font-size:0.3733rem;
+    line-height: 0.4rem;
+    color:#fff;
+    background-color: #ff5c7e;
+    text-align: center;
+    -webkit-transition:color .2s;
+    transition:color .2s;
+    font-weight: bold;
+    /* margin-right: 0.1333rem; */
+}
+.all>input:checked~span{
+    color:#fff;
+    background-color: #D3D3D3;
+}
+.all>input:checked+span{
+    color:#fff;
+    background-color: #ff5c7e;
+}
+
+/* 评分结束 */
+/* 评论 */
+#Logwriter .comment{
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    /* margin-bottom: 0.4rem; */
+}
+#Logwriter .comment .commentHead{
+    height: 0.9067rem;
+    border-bottom:  0.0133rem solid #c8c8c8;
+    line-height: 0.9067rem;
+    font-size: 0.32rem;
+    color: #282828;
+}
+#Logwriter .comment .commentHead span:first-of-type{
+    margin-right: 0.3467rem;
+}
+#Logwriter .container .keyword{
+    margin-top: 0.3333rem;
+    width: 100%;
+    height: 100%;
+    background-color:#ccc;    
+}
+
+#Logwriter .container .form{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    height: 100%;
+}
+#Logwriter .container .keyWord{
+    flex: 1;
+    overflow: hidden;
+}
+#Logwriter .container .keyWords{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    height: 100%;
+    flex: 1;
+}
+#Logwriter .container .keyWords ul{
+    width: 33.33%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*解决ios上滑动不流畅*/
+    -webkit-overflow-scrolling: touch;
+    padding:0 0.4rem;
+}
+#Logwriter .container .keyWords ul li{
+    color: #777;
+    font-size: 0.32rem;
+    width: 1.6rem;
+    height: 1.0667rem;
+    line-height: 1.0667rem;
+    border-bottom: 0.0267rem solid #E2E2E2;
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    position: relative;
+}
+#Logwriter .container .keyWords ul li.active::before{
+    content: '';
+    display: block;
+    width: 0.04rem;
+    height: 0.8rem;
+    background-color: #FF65B1;
+    position: absolute;
+    left: -0.4rem;
+    top: 50%;
+    margin-top: -0.4rem;
+}
+#Logwriter .container .keyWords ul.keyword2 li.active::before{
+    height: 0.5333rem;
+    margin-top: -0.2667rem;
+}
+#Logwriter .container .keyWords ul.keyword3 li.active::before{
+    height: 0.2667rem;
+    margin-top: -0.1333rem;
+}
+#Logwriter .Confirm{
+    width: 100%;
+    height: 1.3333rem;
+    overflow: hidden;
+}
+#Logwriter .Confirm .newDiary{
+    background-color: #ff65b1;
+    color: #fff;
+    height: 1.3333rem;
+    font-size: 0.4133rem;
+    width: 10rem;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  video{
+    background: pink;
+  }
+</style>
+<body>
+<video preload="auto"  webkit-playsinline="true" playsinline="" width="200" height="100" x5-playsinline="true" x-webkit-airplay="true" controls="controls" src="http://p9xy02uo4.bkt.clouddn.com/uat/video/20180815/201808151609212015213710.mp4" >
+
+    不支持video
+</video>
+<div id="checkVideoResult"></div>
+</body>
+<script>
+  function checkVideo()
+  {
+    if(!!document.createElement('video').canPlayType){
+      var vidTest=document.createElement("video");
+      oggTest=vidTest.canPlayType('video/ogg; codecs="theora, vorbis"');
+      if (!oggTest){
+        h264Test=vidTest.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+        if (!h264Test){
+          document.getElementById("checkVideoResult").innerHTML="Sorry. No video support."
+        }else{
+          if (h264Test=="probably"){
+            document.getElementById("checkVideoResult").innerHTML="Yes! Full support!";
+          }
+          else{
+            document.getElementById("checkVideoResult").innerHTML="Well. Some support.";
+          }
+        }
+      }
+      else{
+        if (oggTest=="probably"){
+          document.getElementById("checkVideoResult").innerHTML="Yes! Full support!";
+        }
+        else{
+          document.getElementById("checkVideoResult").innerHTML="Well. Some support.";
+        }
+      }
+    }
+    else{
+      document.getElementById("checkVideoResult").innerHTML="Sorry. No video support."
+    }
+  }
+  checkVideo()
+</script>
+</html>

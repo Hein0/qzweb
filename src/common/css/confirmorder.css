@@ -1,0 +1,295 @@
+#confirmOrder {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    /* margin-bottom: 1.4667rem; */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+#confirmOrder .container{
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1; /* OLD - Firefox 19- */
+    /* width: 20%; For old syntax, otherwise collapses. */
+    -webkit-flex: 1; /* Chrome */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*解决ios上滑动不流畅*/
+    -webkit-overflow-scrolling: touch;
+    /* height: 100%; */
+}
+
+#confirmOrder .confirmList{
+    margin-top: 0.4rem;
+    background-color: #fff;
+    margin-bottom: 0.4rem;
+    padding: 0.44rem 0.3733rem;
+}
+#confirmOrder .confirmList .commodity{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    border-bottom: 0.0133rem solid #c8c8c8;
+    justify-content: space-between;
+    padding: 0.2rem 0;
+}
+#confirmOrder .confirmList .commodity:first-of-type{
+    padding-top: 0;
+}
+#confirmOrder .confirmList .commodity:last-of-type{
+    border: none;
+    padding-bottom: 0;
+}
+#confirmOrder .confirmList .commodity img{
+    width: 1.3333rem;
+    height: 1.3333rem;
+    border-radius: 0.0667rem;
+    margin-right: 0.2667rem;
+}
+#confirmOrder .confirmList .commodity .commodityInfo{
+    flex: 1;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    justify-content: space-between;
+}
+#confirmOrder .confirmList .commodity .commodityInfo h4{
+    font-size: 0.3733rem;
+    font-weight: 500;
+    color: #282828;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+#confirmOrder .confirmList .commodity .commodityInfo .specification{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    font-size: 0.32rem;
+    color: #a0a0a0;
+}
+#confirmOrder .confirmList .commodity .commodityInfo .specification .server{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+#confirmOrder .confirmList .commodity .commodityInfo .specification .server li{
+    font-size: 0.32rem;
+    color: #fff;
+    margin-left: 0.2667rem;
+    background-color: #ff5c7e;
+    text-align: center;
+    padding: 0.0133rem 0.2rem;
+    position: relative;
+    line-height: 100%;
+}
+#confirmOrder .confirmList .commodity .commodityInfo .specification .server li div{
+    width: 0.0667rem;
+    height: 100%;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+}
+#confirmOrder .confirmList .commodity .commodityInfo .specification .server li .left{
+    left: -0.0267rem;
+}
+#confirmOrder .confirmList .commodity .commodityInfo .specification .server li .right{
+    right: -0.0267rem;
+}
+#confirmOrder .confirmList .commodity .commodityInfo .specification .server li i{
+    display: block;
+    width: 0.0667rem;
+    height: 0.0667rem;
+    background-color: #fff;
+    border-radius: 50%;
+}
+#confirmOrder .confirmList .commodity .purchaseInfo{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 0.5333rem;
+}
+#confirmOrder .confirmList .commodity .price{
+    font-size: 0.32rem;
+    color: #484848;
+    margin-bottom: 0.24rem;
+}
+#confirmOrder .confirmList .commodity .number{
+    font-size: 0.32rem;
+    color: #a0a0a0;
+}
+
+/* 金额列表 */
+#confirmOrder .amountList{
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    margin-bottom: 0.4rem;
+}
+#confirmOrder .amountList .amount{
+    height: 0.9333rem;
+    line-height: 0.9333rem;
+    position: relative;
+    border-bottom: 0.0133rem solid #c8c8c8;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+    font-size: 0.3733rem;
+}
+#confirmOrder .amountList .amount:last-of-type{
+    border: none;
+}
+/* #confirmOrder .amountList .amount::after{
+    content: '';
+    display: block;
+    border: solid 0.0267rem #c8c8c8;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    position: absolute;
+    top: 50%;
+    right: 0.2667rem;
+    width: 0.1333rem;
+    height: 0.1333rem;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+} */
+#confirmOrder .amountList .amount .amountName{
+    margin: 0 0.1333rem;
+    line-height: 0.9333rem;
+    font-style: normal;
+    font-weight: 500;
+}
+#confirmOrder .amountList .amount .totlePrice{
+    flex: 1;
+    line-height: 0.9333rem;
+}
+#confirmOrder .amountList .amount .totlePrice em{
+    font-style: normal;
+    color: #ff65b1;
+    line-height: 0.9333rem;
+}
+#confirmOrder .amountList .amount .save{
+    margin-right: 0.6667rem;
+    font-size: 0.32rem;
+    line-height: 0.9333rem;
+    color: #a0a0a0;
+}
+#confirmOrder .amountList .amount em{
+    font-style: normal;
+    color: #ff65b1;
+}
+#confirmOrder .tel{
+    background-color: #fff;
+    position: relative;
+    padding: 0 0.3733rem;
+    margin-bottom: 0.4rem;
+    height: 0.9333rem;
+    line-height: 0.9333rem;
+    font-size: 0.3733rem;
+    font-style: normal;
+    font-weight: 500;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+  align-items: center;
+}
+/* #confirmOrder .tel::after{
+    content: '';
+    display: block;
+    border: solid 0.0267rem #c8c8c8;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    position: absolute;
+    top: 50%;
+    right: 0.64rem;
+    width: 0.1333rem;
+    height: 0.1333rem;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+} */
+#confirmOrder .tel b{
+    font-weight: 500;
+    color: #5fc5ff;
+}
+
+/* 底部 */
+#confirmOrder .footer{
+    width: 100%;
+    height: 1.3333rem;
+    /* position: absolute; */
+    /* bottom: 0; */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    background-color: #fff;
+    overflow: hidden;
+    flex: 0 0 auto;
+}
+#confirmOrder .footer .statistics{
+    flex: 1;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    justify-content: flex-end;
+}
+#confirmOrder .footer .statistics{
+    font-size: 0.2667rem;
+    color: #282828;
+}
+#confirmOrder .footer .statistics .totle{
+    margin-right: 0.1067rem;
+}
+#confirmOrder .footer .statistics .totle em{
+    font-style: normal;
+}
+#confirmOrder .footer .statistics .totlePrice{
+    margin-right: 0.4267rem;
+}
+#confirmOrder .footer .statistics .totlePrice em{
+    font-style: normal;
+    color: #ff65b1;
+}
+#confirmOrder .footer .ClearingButton{
+    font-size: 0.4533rem;
+    color: #fff;
+    line-height: 1.3333rem;
+    text-align: center;
+    width: 2.9333rem;
+    background-color: #ff5c7e;
+    border: none;
+}

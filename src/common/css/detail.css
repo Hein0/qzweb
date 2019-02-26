@@ -1,0 +1,623 @@
+a{text-decoration: none;}
+#detail {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    /* margin-bottom: 1.4667rem; */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+#detail .container{
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1; /* OLD - Firefox 19- */
+    /* width: 20%; For old syntax, otherwise collapses. */
+    -webkit-flex: 1; /* Chrome */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*解决ios上滑动不流畅*/
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    /* height: 100%; */
+}
+#detail::-webkit-scrollbar {
+    display: none;
+}
+#detail .container .header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 1.8rem;
+    background-color: #f8f8f8;
+    z-index: 1;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-around;
+    align-items: flex-end;
+    opacity: 0;
+    padding-bottom: 0.2rem;
+}
+#detail .container .header li{
+    color: #787878;
+    font-size: 0.32rem;
+}
+#detail .container .header li.active{
+    color: #ff5c7e;
+}
+/* 图片轮播 */
+#detail .mint-swipe{
+    width: 100%;
+    height: 5.6rem;
+}
+#detail .mint-swipe .mint-swipe-item img{
+    width: 100%;
+    height: 100%;
+}
+/* 产品信息 */
+#detail .info{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    background-color: #fff;
+    padding-left: 0.3733rem;
+    padding-right: 0.3733rem;
+    margin-bottom: 0.4rem;
+}
+#detail .info .priceInfo{
+    margin-top: 0.2933rem;
+    margin-bottom: 0.2133rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+}
+#detail .info .priceInfo .scalePrice{
+    font-size: 0.56rem;
+    margin-right: 0.32rem;
+    color: #ff5c7e;
+}
+#detail .info .priceInfo .scale{
+    width: 0.8533rem;
+    height: 0.4rem;
+    border-radius: 0.0533rem;
+    font-size: 0.32rem;
+    color: #fff;
+    background-color: #ff5c7e;
+    text-align: center;
+    line-height: 0.4rem;
+}
+#detail .info .bookInfo{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    font-size: 0.32rem;
+    color: #787878;
+    margin-bottom: 0.2667rem;
+}
+#detail .info .bookInfo .shoppe{
+    margin-right: 0.24rem;
+}
+#detail .info .bookInfo .price{
+    color: #c8c8c8;
+    margin-right: 0.32rem;
+    text-decoration: line-through;
+}
+#detail .info .bookInfo .book em{
+    margin-left: 0.24rem;
+    font-style: normal;
+}
+#detail .info .otherInfo{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    font-size: 0.32rem;
+    line-height: 0.3867rem;
+    padding-bottom: 0.1867rem;
+    border-bottom: 0.0133rem solid #c8c8c8;
+    color: #a0a0a0;
+    overflow: hidden;
+    justify-content: space-between
+}
+#detail .info .otherInfo span{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+}
+#detail .info .otherInfo i{
+    /* display: inline-block; */
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-right: 0.1067rem;
+}
+.location-icon{
+    background-image: url("../../module/shop/images/dinwei_tb_@2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.return-icon{
+    background-image: url("../../module/shop/images/xianshi_tb_@2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.diary-icon{
+    background-image: url("../../module/shop/images/bianji_tb_@2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* #detail .info .otherInfo .location{
+    margin-right: 1.4667rem;
+}
+#detail .info .otherInfo .return{
+    margin-right: 1.0667rem;;
+}
+#detail .info .otherInfo .diary{
+    margin-right: 0.1867rem;
+} */
+#detail .info .otherInfo .returnCash{
+    margin-right: 0.1867rem;
+}
+
+#detail .info .title{
+    padding: 0.2933rem 0;
+    font-size: 0.3733rem;
+    color: #282828;
+    font-weight: bold;
+}
+/* 优惠 */
+#detail .discounts{
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    margin-bottom: 0.4rem;
+}
+#detail .discounts .discount{
+    height: 0.9333rem;
+    line-height: 0.9333rem;
+    position: relative;
+    border-bottom: 0.0133rem solid #c8c8c8;
+}
+#detail .discounts .discount:last-of-type{
+    border: none;
+}
+#detail .discounts .discount::before{
+    content: '';
+    display: block;
+    clear: both;
+}
+/* #detail .discounts .discount::after{
+    content: '';
+    display: block;
+    border: solid 0.0267rem #c8c8c8;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    position: absolute;
+    top: 50%;
+    right: 0.2667rem;
+    width: 0.1333rem;
+    height: 0.1333rem;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+} */
+#detail .discounts .discount .discount-icon{
+    float: left;
+    width: 0.4rem;
+    height: 0.4rem;
+    font-size: 0.2667rem;
+    line-height: 0.4rem;
+    margin-top: 0.2667rem;
+    border-radius: 0.0667rem;
+    color: #fff;
+    text-align: center;
+    font-style: normal;
+    background-color: #5fc5ff;
+    margin-right: 0.2667rem;
+}
+#detail .discounts .discount .discount-icon.red{
+    background-color: #ff5c7e;
+}
+#detail .discounts .discount .discount-text{
+    font-size: 0.32rem;
+    color: #787878;
+}
+#detail .discounts .discount .discount-text em{
+    font-style: normal;
+    color: #ff5c7e;
+}
+/* 医院信息 */
+#detail .hospital{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    background-color: #fff;
+    padding: 0.56rem 0.3733rem 0.2933rem;
+    margin-bottom: 0.4rem;
+}
+#detail .hospital .hospitalInfo{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    margin-bottom: 0.4rem;
+}
+#detail .hospital .hospitalInfo .hospital-icon{
+    width: 1.7333rem;
+    height: 1.7333rem;
+    margin-right: 0.3733rem;
+}
+#detail .hospital .hospitalInfo .hospital-text{
+    flex: 1;
+}
+#detail .hospital .hospitalInfo .hospital-text h4{
+    font-size: 0.3733rem;
+    color: #282828;
+    font-weight: bold;
+    overflow: hidden;
+    margin-bottom: 0.24rem;
+    position: relative;
+}
+#detail .hospital .hospitalInfo .hospital-text h4 i{
+    width: 0.4533rem;
+    height: 0.4533rem;
+    position: absolute;
+    background-image: url("../../module/shop/images/renzheng_tb_@2.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#detail .hospital .hospitalInfo .hospital-text p{
+    font-size: 0.32rem;
+    color: #787878;
+}
+#detail .hospital .hospitalInfo .hospital-text p:first-of-type{
+    margin-bottom: 0.16rem;
+}
+#detail .hospital .buttons{
+    margin-left: 2.1066rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+}
+#detail .hospital .buttons a{
+    background-color: #fff;
+    border: 0.0267rem solid #5fc5ff;
+    color: #5fc5ff;
+    border-radius: 0.3067rem;
+    width: 3.0133rem;
+    height: 0.6133rem;
+    line-height: 0.5867rem;
+    font-size: 0.32rem;
+    overflow: hidden;
+    text-decoration : none;
+    padding: 0;
+    text-align: left;
+}
+#detail .hospital .buttons a i{
+    float: left;
+    margin-left: 0.5333rem;
+    margin-right: 0.1067rem;
+    width: 0.4533rem;
+    height: 0.4533rem;
+    margin-top: 0.0533rem;
+}
+#detail .hospital .buttons .tel i{
+    background-image: url("../../module/shop/images/bohao_tb_@2.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#detail .hospital .buttons .online i{
+    background-image: url("../../module/shop/images/zixun_tb_@2.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+/* 评分开始 */
+.all{
+    position: relative;
+}
+.all>input{
+    opacity:0;
+    position: absolute;
+    width:0.4rem;
+    height:0.4rem;
+    margin:0;
+    margin-top: 0.25335rem;
+}
+.all>input:nth-of-type(1),
+.all>span:nth-of-type(1){
+    display:none;
+}
+.all>span{
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 0.0667rem;
+    font-size:0.3733rem;
+    line-height: 0.4rem;
+    color:#fff;
+    background-color: #ff5c7e;
+    text-align: center;
+    -webkit-transition:color .2s;
+    transition:color .2s;
+    font-weight: bold;
+    /* margin-right: 0.1333rem; */
+}
+.all>input:checked~span{
+    color:#fff;
+    background-color: #D3D3D3;
+}
+.all>input:checked+span{
+    color:#fff;
+    background-color: #ff5c7e;
+}
+/* 评分结束 */
+/* 评论 */
+#detail .comment{
+    background-color: #fff;
+    padding: 0 0.3733rem;
+    /* margin-bottom: 0.4rem; */
+}
+#detail .comment .commentHead{
+    height: 0.9067rem;
+    /* border-bottom:  0.0133rem solid #c8c8c8; */
+    line-height: 0.9067rem;
+    font-size: 0.32rem;
+    color: #787878;
+}
+#detail .comment .commentHead span:first-of-type{
+    margin-right: 0.3467rem;
+}
+#detail .comment .commentHead b{
+    color: #282828;
+    font-weight: bold;
+    margin-right: 0.1333rem;
+    font-size: 0.3733rem;
+}
+#detail .comment .tips ul{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+    padding-bottom: 0.4rem;
+}
+#detail .comment .tips ul li{
+    padding: 0 0.2667rem;
+    font-size: 0.32rem;
+    color: #b1b1b1;
+    background-color: #eee;
+    margin-top: 0.4rem;
+    height: 0.6133rem;
+    line-height: 0.6133rem;
+    border-radius: 0.3067rem;
+    margin-right: 0.24rem;
+}
+/* 日志列表 */
+#detail .diaryList .diaryInfo{
+    margin-top: 0.4rem;
+    padding: 0.4rem 0.5067rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    background-color: #fff;
+}
+#detail .diaryList .diaryInfo .diary-img{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    justify-content: space-between;
+    margin-bottom: 0.3733rem;
+}
+#detail .diaryList .diaryInfo .diary-img img{
+    width: 4.4267rem;
+    height: 2.96rem;
+    border-radius: 0.1333rem;
+}
+#detail .diaryList .diaryInfo .authorInfo{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    margin-bottom: 0.4533rem;
+}
+#detail .diaryList .diaryInfo .authorInfo img{
+    width: 1.3867rem;
+    height: 1.3867rem;
+    margin-right: 0.2667rem;
+    border-radius: 50%;
+}
+#detail .diaryList .diaryInfo .authorInfo .author{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+#detail .diaryList .diaryInfo .authorInfo .author h4{
+    font-size: 0.4267rem;
+    color: #282828;
+    font-weight: bold;
+}
+#detail .diaryList .diaryInfo .authorInfo .author h4 .time{
+    float: right;
+    font-size: 0.32rem;
+    color: #b1b1b1;
+    line-height: 0.4267rem;
+    font-weight: normal;
+}
+#detail .diaryList .diaryInfo .authorInfo .author .authorComment{
+    font-size: 0.3733rem;
+    color: #b1b1b1;
+}
+#detail .diaryList .diaryInfo .authorInfo .author .authorComment b{
+    color: #282828;
+}
+#detail .diaryList .diaryInfo .authorInfo .author .authorComment .all input{
+    margin-top: 0;
+}
+#detail .diaryList .content{
+    font-size: 0.3733rem;
+    color: #282828;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 150%;
+    overflow: hidden;
+}
+
+/* 底部 */
+#detail .footer{
+    width: 100%;
+    height: 1.3333rem;
+    /* position: absolute; */
+    /* bottom: 0; */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    background-color: #fff;
+    overflow: hidden;
+    flex: 0 0 auto;
+}
+#detail .footer .payInfo{
+    /* width: 2.9067rem; */
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    justify-content: space-around;
+    /* text-align: center; */
+    padding: 0 0.3733rem;
+    border-right: 1px solid #DFDFDF;
+}
+#detail .footer .payInfo p{
+    font-size: 0.32rem;
+    color: #787878;
+}
+#detail .footer .payInfo p span{
+    color: #ff5c7e;
+}
+#detail .footer .consult{
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 0.3333rem;
+}
+#detail .footer .consult a{
+	text-decoration: none;
+	display: inline-block;
+	display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#detail .footer .consult a i{
+    width: 0.4533rem;
+    height: 0.4533rem;
+    background-image: url("../../module/shop/images/zixun2_tb_@2.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#detail .footer .consult a span{
+    font-size: 0.32rem;
+    color: #787878;
+}
+#detail .footer .toShoppingCart,
+#detail .footer .payNow{
+    font-size: 0.4533rem;
+    color: #fff;
+    line-height: 1.3333rem;
+    text-align: center;
+    background-color: #FF7592;
+    flex: 1;
+}
+#detail .footer .payNow{
+    background-color: #ff5c7e;
+}
+#detail #detailImg{
+    margin-top: 0.4rem;
+    width: 100%;
+    background-color: #fff;
+}
+#detail #detailImg h4{
+    text-align: center;
+    line-height: 1.3333rem;
+    font-size: 0.32rem;
+    color: #282828
+}
+#detail #detailImg img{
+    width:100%;
+}
+#detail #notice{
+    margin-top: 0.4rem;
+    width: 100%;
+    background-color: #fff;
+}
+#detail #notice h4{
+    text-align: center;
+    line-height: 1.3333rem;
+    font-size: 0.32rem;
+    color: #282828
+}
+.main_pay_box {padding: 0 10px 10px;}
+.main_pay_box ul {padding: 10px 0;border-bottom: 1px solid #f0f0f0;}
+.main_pay_box h3 {font-size: 14px;color: #333;margin: 5px 0;}
+.main_pay_box li {color: #777;margin-top: 5px;    font-size: 13px;line-height: 1.5;}
+.hospital-text h4 {
+  line-height: 1.5;
+}
+
+
+
+
+

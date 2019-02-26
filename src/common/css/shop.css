@@ -1,0 +1,353 @@
+#shop::-webkit-scrollbar {
+    display: none;
+}
+#shop{
+    width: 100%;
+    height: 100%;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: column;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+#shop .container{
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    -moz-box-flex: 1; /* OLD - Firefox 19- */ 
+    /* width: 20%; For old syntax, otherwise collapses. */
+    -webkit-flex: 1; /* Chrome */ 
+    -ms-flex: 1; /* IE 10 */ 
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*解决ios上滑动不流畅*/
+    -webkit-overflow-scrolling: touch; 
+    /* height: 100%; */
+}
+#shop .top{
+    background-image: url("../../module/shop/images/0_@2x.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 0.96rem;
+    background-position-y: -1.7067rem;
+}
+#shop .hospitalInfo {
+    width: 9.4667rem;
+    height: 5.2rem;
+    border-radius: 0.1333rem;
+    margin: 0% auto;
+    background-image: url("../../module/shop/images/sc_bj@2x.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 1.12rem;
+    box-shadow: 0 0.0133rem 0.24rem 0.0533rem rgba(254, 117, 192, 0.6);
+    background-color: #fff;
+}
+#shop .hospitalInfo .mint-swipe{
+    overflow: inherit;
+    height: 100%;
+}
+#shop .mint-swipe .mint-swipe-indicators{
+    bottom: 0.3467rem;
+}
+#shop .hospitalInfo .mint-swipe .mint-swipe-indicators{
+    bottom: -0.5067rem;
+    z-index: 5;
+}
+#shop .mint-swipe .mint-swipe-indicator{
+    width: 0.1067rem;
+    height: 0.1067rem;
+    opacity: 1;
+    background-color: #dcdcdc;
+}
+#shop .mint-swipe .mint-swipe-indicator.is-active{
+    width: 0.1867rem;
+    border-radius: 0.1067rem;
+    background-color: #ff65b1;
+}
+#shop .hospitalList {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    padding-top: 0.56rem;
+    padding-left: 1.1467rem;
+    padding-right: 1.1467rem;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+}
+#shop .hospitalInfo .hospitalList .hospital {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 2.3867rem;
+}
+#shop .hospitalInfo .hospitalList .hospital img {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-bottom: 0.24rem;
+    border-radius: 50%;
+}
+#shop .hospitalInfo .hospitalList .hospital h3 {
+    text-align: center;
+    font-size: 0.3733rem;
+    font-weight: 600;
+    color: #505050;
+    margin-bottom: 0.2133rem;
+    height: 0.8533rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+#shop .hospitalInfo .hospitalList .hospital span {
+    text-align: center;
+    font-size: 0.2667rem;
+    color: #a0a0a0;
+    display: block;
+    margin-bottom: 0.2933rem;
+}
+#shop .hospitalInfo .hospitalList .hospital button {
+    /* width: 1.3333rem; */
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    height: 0.64rem;
+    background-color: #ff65b1;
+    border: none;
+    border-radius: 0.32rem;
+    color: #fff;
+    font-size: 0.32rem;
+}
+#shop .hospitalInfo .hospitalList .hospital button.isAttention{
+    background-color: #D3D3D3;
+}
+#shop .mint-swipe{
+    height:8.0533rem;
+}
+#shop .projects {
+    padding: 0 0.2667rem;
+    overflow: hidden;
+    padding-bottom: 0.9067rem;
+    padding-top: 0.9067rem;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+}
+#shop .projects .project {
+    float: left;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    width: 3.0133rem;
+    height: 3.0133rem;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.08rem;
+    box-shadow: 0 0rem 0.24rem 0.0267rem rgba(255, 131, 199, 0.4);
+    margin-bottom: 0.2133rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+}
+#shop .projects .project:nth-of-type(3n){
+    margin-right: 0;
+}
+#shop .projects .project:nth-of-type(4),
+#shop .projects .project:nth-of-type(5),
+#shop .projects .project:nth-of-type(6) {
+    margin-bottom: 0;
+}
+#shop .projects .project img {
+    width: 1.2267rem;
+    height: 1.2267rem;
+    margin-bottom: 0.1867rem;
+}
+#shop .projects .project span {
+    font-size: 0.3733rem;
+    color: #505050;
+}
+#shop .cleanscoller{
+    height: 1.2267rem;
+    /* padding-bottom: 0.5867rem; */
+    /* position: relative; */
+    overflow: hidden;
+}
+#shop .classify {
+    height: 1.2267rem;
+    padding-bottom: 2rem;
+    overflow: hidden;
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    /*解决ios上滑动不流畅*/
+    -webkit-overflow-scrolling: touch;
+    /* position: absolute;
+    left: 0; */
+}
+#shop .classify::-webkit-scrollbar {
+    display: none;
+}
+#shop .classify::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#shop .classify li {
+    /* float: left; */
+    display: inline-block;
+    text-align: center;
+    /* width: 1.4667rem; */
+    height: 0.64rem;
+    line-height: 0.64rem;
+    font-size: 0.3733rem;
+    border-radius: 0.32rem;
+    box-shadow: 0 1px 0.16rem 0.0267rem rgba(255, 131, 199, 0.2);
+    color: #8c8c8c;
+    margin-left: 0.2667rem;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+#shop .classify label{
+    cursor: pointer;
+    margin-right: 0.2rem;
+}
+#shop .classify li input:checked~label {
+    color: #ff65b1;
+}
+#shop .classify li:last-of-type {
+    margin-right: 0.2667rem;
+}
+#shop .classify li input {
+    width: 0.32rem;
+    height: 0.32rem;
+    opacity:0;
+    position: absolute;
+    margin:0;
+    z-index: 1;
+    top: 50%;
+    margin-top: -0.16rem;
+    cursor: pointer;
+}
+#shop .classify li i{
+    display: inline-block;
+    width: 0.32rem;
+    height: 0.32rem;
+    text-align: center;
+    -webkit-transition:color .2s;
+    transition:color .2s;
+    position: relative;
+    margin-left: 0.2rem;
+    margin-right: 0.1333rem;
+    background-image: url("../../module/shop/images/sc_07-01@2x.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#shop .classify li input:checked+i{
+    background-image: url("../../module/shop/images/sc_07@2x.png");
+}
+#shop .commodityList{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.0667rem;
+}
+#shop .commodityList .commodity{
+    list-style: none;
+    width: 9.4933rem;
+    height: 3.36rem;
+    padding: 0.32rem 0.1333rem;
+    border-radius: 0.1333rem;
+    box-shadow: 0 1px 0.16rem 0.0267rem rgba(255, 131, 199, 0.2);
+    margin-bottom: 0.4rem;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+}
+#shop .commodityList .commodity .commodity-icon{
+    width: 2.9333rem;
+    height: 2.72rem;
+}
+#shop .commodityList .commodity .info{
+    width: 6.4266rem;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    margin-left: 0.26rem;
+    margin-right: 0.1rem;
+}
+#shop .commodityList .commodity .info h4{
+    /* margin-top: 0.3467rem; */
+    font-size: 0.3733rem;
+    color: #282828;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+    line-height: 125%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+#shop .commodityList .commodity .info p{
+    color: #8c8c8c;
+    font-size: 0.3733rem;
+    margin-bottom: 0.2rem;
+}
+#shop .commodityList .commodity .info ul{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+#shop .commodityList .commodity .info ul .scale{
+    width: 0.2667rem;
+    height: 0.2667rem;
+    background-image: url("../../module/shop/images/sc_08@2x.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-right: 0.0667rem;
+}
+#shop .commodityList .commodity .info ul li{
+    color: #ff65b1;
+    font-size: 0.2667rem;
+    margin-right: 0.4rem;
+}
+#shop .commodityList .commodity .info .price{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+#shop .commodityList .commodity .info .price .left{
+    color: #ff4242;
+    font-size: 0.4267rem;
+    margin-right: 0.1333rem;
+    font-weight: bold;
+}
+#shop .commodityList .commodity .info .price .right{
+    color: #c8c8c8;
+    font-size: 0.3733rem;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+#shop .commodityList .commodity .info .price .book{
+    position: absolute;
+    right: 0;
+    font-size: 0.32rem;
+    color: #787878;
+}
+
+.mat04{margin-top: 60px;}

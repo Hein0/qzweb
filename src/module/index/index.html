@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>首页</title>
+  <meta id="viewport" name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="W_design" content="750"/>
+
+  <style>
+    #cnzz_stat_icon_1274682755 {display: none;}
+		#cnzz_stat_icon_1274723809 {display: none;}
+  </style>
+
+
+<script>
+
+  //  获取设备信息
+  function cbGetDeviceInfo(JsonObjStr) {
+    window.APP.$store.commit('GET_DEVICE_INFO', {data: JsonObjStr})
+  }
+</script>
+</head>
+<body>
+<div id="App" style="height:100%;">
+  <router-view></router-view>
+</div>
+
+<script src="./h5native.js"></script>
+<!-- built files will be auto injected -->
+</body>
+  <script>
+	(function (doc, win) {
+	  var docEl = doc.documentElement,
+	    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	    recalc = function () {
+	      var clientWidth = docEl.clientWidth;
+	      if (!clientWidth) return;
+	      if (clientWidth >= 750) {
+	        docEl.style.fontSize = '40px';
+	      } else {
+	        docEl.style.fontSize = 40 * (clientWidth / 750) + 'px';
+	      }
+	    };
+	  if (!doc.addEventListener) return;
+	  win.addEventListener(resizeEvt, recalc, false);
+	  doc.addEventListener('DOMContentLoaded', recalc, false);
+	})(document, window);
+	
+	var _czc = _czc || [];
+	//_czc.push(["_setAccount", "1274682755"]); //统计生产环境
+	_czc.push(["_setAccount", "1274723809"]); //统计uat环境
+
+  </script>
+  <!-- 友盟统计生产环境 -->
+  <!-- <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : "   http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274682755'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274682755' type='text/javascript'%3E%3C/script%3E"));
+  </script> -->
+
+  <!-- 友盟统计uat环境 -->
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274723809'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274723809' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+<!--<script src="https://bdc.bqjr.cn/script/QZ/conf.js"></script>
+<script src="https://bdc.bqjr.cn/script/common/behaviorData.js"></script>
+<script src="https://bdc.bqjr.cn/script/common/xw.1.0.min.js"></script>-->
+</html>

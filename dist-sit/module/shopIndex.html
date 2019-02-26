@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no,viewport-fit=cover"">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <meta name="renderer" content="webkit">
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Cache-Control"content="no-cache"/>
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+     <script type="text/javascript"src="https://webapi.amap.com/maps?v=1.4.8&key=ac3c6eff0826d48f2f3cc5d1b003cad1&plugin=AMap.CitySearch"></script>
+
+    <script>
+        //声明_czc对象:
+        var _czc = _czc || [];
+        // _czc.push(["_setAccount", "1274682755"]);  //统计生产环境
+        _czc.push(["_setAccount", "1274723809"]);  //统计uat环境
+    </script>
+
+
+    <style type="text/css">
+        #cnzz_stat_icon_1274682755{
+          display: none;
+        }
+          
+        #cnzz_stat_icon_1274723809{
+          display: none;
+        }
+
+    </style>
+
+    <title>仟姿惠</title>
+
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        *::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        input,
+        textarea {
+        border: 0;
+        -webkit-appearance: none;
+        }
+
+        * ::-webkit-scrollbar-thumb {
+            border-radius: 0px;
+            -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+            background: rgba(0, 0, 0, 0);
+        }
+
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        html,
+        body,
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            /* position: relative; */
+            overflow: hidden;
+            overflow-y: hidden;	
+            /* top: 0; */
+        }
+
+        #app {
+            overflow: hidden;
+        }
+    </style>
+     <!-- 友盟统计生产环境 -->
+    <!-- <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274682755'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274682755' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+    
+    <!-- 友盟统计uat环境 -->
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274723809'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274723809' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+<link href="../static/css/vendor.e52d83ed6c476f3e0b70db1df5fc5823.css?216c13c380d4f2cdc588" rel="stylesheet"><link href="../static/css/module/shopIndex.e5a2e41b106eda42a08843df0d8df45c.css?216c13c380d4f2cdc588" rel="stylesheet"></head>
+
+<body scoll=no style="height:100%;">
+    <div id="app"></div>
+<script type="text/javascript" src="../static/js/manifest.bab65b7797d03ffcbe41.js?216c13c380d4f2cdc588"></script><script type="text/javascript" src="../static/js/vendor.a3cd8bcf809cc657e553.js?216c13c380d4f2cdc588"></script><script type="text/javascript" src="../static/js/module/shopIndex.57b47144439b4363ade2.js?216c13c380d4f2cdc588"></script></body>
+<!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+<script src="./h5native.js"></script>
+<script>
+    /**
+ * 设置html-动态font-size rem
+ */
+    (function (win, lib) {
+        var doc = win.document;
+        var docEl = doc.documentElement;
+        var metaEl = doc.querySelector('meta[name="viewport"]');
+        var flexibleEl = doc.querySelector('meta[name="flexible"]');
+        var dpr = 0;
+        var scale = 0;
+        var tid;
+        var flexible = lib.flexible || (lib.flexible = {});
+
+        if (metaEl) {
+            console.warn('将根据已有的meta标签来设置缩放比例');
+            var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
+            if (match) {
+                scale = parseFloat(match[1]);
+                dpr = parseInt(1 / scale);
+            }
+        } else if (flexibleEl) {
+            var content = flexibleEl.getAttribute('content');
+            if (content) {
+                var initialDpr = content.match(/initial\-dpr=([\d\.]+)/);
+                var maximumDpr = content.match(/maximum\-dpr=([\d\.]+)/);
+                if (initialDpr) {
+                    dpr = parseFloat(initialDpr[1]);
+                    scale = parseFloat((1 / dpr).toFixed(2));
+                }
+                if (maximumDpr) {
+                    dpr = parseFloat(maximumDpr[1]);
+                    scale = parseFloat((1 / dpr).toFixed(2));
+                }
+            }
+        }
+
+        if (!dpr && !scale) {
+            var isAndroid = win.navigator.appVersion.match(/android/gi);
+            var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+            var devicePixelRatio = win.devicePixelRatio;
+            if (isIPhone) {
+                // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+                if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+                    dpr = 3;
+                } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+                    dpr = 2;
+                } else {
+                    dpr = 1;
+                }
+            } else {
+                // 其他设备下，仍旧使用1倍的方案
+                dpr = 1;
+            }
+            scale = 1 / dpr;
+        }
+
+        docEl.setAttribute('data-dpr', dpr);
+        if (!metaEl) {
+            metaEl = doc.createElement('meta');
+            metaEl.setAttribute('name', 'viewport');
+            metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+            if (docEl.firstElementChild) {
+                docEl.firstElementChild.appendChild(metaEl);
+            } else {
+                var wrap = doc.createElement('div');
+                wrap.appendChild(metaEl);
+                doc.write(wrap.innerHTML);
+            }
+        }
+
+        function refreshRem() {
+            var width = docEl.getBoundingClientRect().width;
+            // if (width / dpr > 540) {
+            //     width = 540 * dpr;
+            // }
+            var rem = width / 10;
+            docEl.style.fontSize = rem + 'px';
+            flexible.rem = win.rem = rem;
+        }
+
+        win.addEventListener('resize', function () {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+        }, false);
+        win.addEventListener('pageshow', function (e) {
+            if (e.persisted) {
+                clearTimeout(tid);
+                tid = setTimeout(refreshRem, 300);
+            }
+        }, false);
+
+        if (doc.readyState === 'complete') {
+            doc.body.style.fontSize = 12 * dpr + 'px';
+        } else {
+            doc.addEventListener('DOMContentLoaded', function (e) {
+                doc.body.style.fontSize = 12 * dpr + 'px';
+            }, false);
+        }
+
+
+        refreshRem();
+
+        flexible.dpr = win.dpr = dpr;
+        flexible.refreshRem = refreshRem;
+        flexible.rem2px = function (d) {
+            var val = parseFloat(d) * this.rem;
+            if (typeof d === 'string' && d.match(/rem$/)) {
+                val += 'px';
+            }
+            return val;
+        }
+        flexible.px2rem = function (d) {
+            var val = parseFloat(d) / this.rem;
+            if (typeof d === 'string' && d.match(/px$/)) {
+                val += 'rem';
+            }
+            return val;
+        }
+
+    })(window, window['lib'] || (window['lib'] = {}));
+
+
+    /**
+     * ios阻止缩放
+    */
+    window.onload = function () {
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('dblclick', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        });
+        var lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    };
+    document.documentElement.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    }, false);
+    var lastTouchEnd = 0;
+    document.documentElement.addEventListener('touchend', function (event) {
+        var now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+
+    // (function () {
+    //     var startY, endY;
+    //     //记录手指触摸的起点坐标
+    //     $('body').on('touchstart', function (e) {
+    //         startY = e.touches[0].pageY;
+    //     });
+    //     $('body').on('touchmove', function (e) {
+    //         endY = e.touches[0].pageY;  //记录手指触摸的移动中的坐标
+    //         //手指下滑，页面到达顶端不能继续下滑
+    //         if (endY > startY && $(window).scrollTop() <= 0) {
+    //             e.preventDefault();
+    //         }
+    //         //手指上滑，页面到达底部能继续上滑
+    //         if (endY < startY && $(window).scrollTop() +
+    //             $(window).height() >= $('body')[0].scrollHeight) {
+    //             e.preventDefault();
+    //         }
+    //     })
+    // })()
+
+    // //angular的写法，仅供参考
+    // window.element(document).on('scroll', function () {
+    //     var scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    //     var window_height = $(window).height() + $(window).scrollTop();
+    //     if (scrollHeight <= window_height) {
+    //         //页面停止滑动，滚动容器恢复默认定位
+    //         $(ele).css({ 'position': 'absolute' })
+    //     } else {
+    //         //页面滚动，滚动容器设置固定定位，随着微信内置浏览器一块儿滑动
+    //         $(ele).css({ 'position': 'static' })
+    //     }
+    // })
+</script>
+<!--<script src="https://bdc.bqjr.cn/script/QZ/conf.js"></script>
+<script src="https://bdc.bqjr.cn/script/common/behaviorData.js"></script>
+<script src="https://bdc.bqjr.cn/script/common/xw.1.0.min.js"></script>-->
+</html>
